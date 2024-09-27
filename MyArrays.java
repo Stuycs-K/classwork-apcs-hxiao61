@@ -1,4 +1,7 @@
 public class MyArrays{
+  public static void main(String[]args){
+    
+  }
   public static String aryToString(int[] nums){
     String out = "[";
     for(int i = 0; i < nums.length; i++){
@@ -11,6 +14,9 @@ public class MyArrays{
     }
   }
   public static int[] returnCopy(int[]ary){
-    
+
+  }
+  public static int[] concatArray(int[]ary1,int[]ary2){
+
   }
 }
