@@ -11,6 +11,17 @@ public class ArrayMethods {
         }
         out += "]";
         return out;
+    }
+    public static String arrToString(int[][]ary){
+        String out = "[";
+        for (int i = 0; i < ary.length; i++){
+            out += arrToString(ary[i]);
+            if (i != ary.length - 1){
+                out += ", ";
+            }
+        }
+        out += "]"
+        return out;
     }   
     public static int arr2DSum(int[][]nums) {
         int count = 0;
@@ -22,6 +33,18 @@ public class ArrayMethods {
         }
     }
     public static void main(String[] args) {
+        int[][] test1 = {{1, 2, 3}};
+        System.out.println("arryToString({{1, 2, 3}}) expected [[1, 2 ,3]] result: " + arryToString(test1));
+        int[][] test2 = {{1}, {2}, {3}};
+        System.out.println("arryToString({{1}, {2}, {3}};) expected [[1], [2], [3]] result: " + arryToString(test2));
+        int[][] test3 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println("arryToString({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}) expected [[1, 2, 3], [4, 5, 6], [7, 8, 9]] result: " + arryToString(test3));
+        int[][] test4 = {{}};
+        System.out.println("arryToString({{}}) expected [[]] result: " + arryToString(test4));
+        int[][] test5 = {{}, {}, {}};
+        System.out.println("arryToString({{}, {}, {}}) expected [[], [], []] result: " + arryToString(test5));
+        int[][] test6 = {{1, 2, 3}, {}, {4, 5}};
+        System.out.println("arryToString({{1, 2, 3}, {}, {4, 5}}) expected [[1, 2, 3], [], [4, 5]] result: " + arryToString(test6));
         int [][] a = {{2,1},{3,4,5},{1}};
         System.out.println("Expected: 16 " + "Output: "arr2DSum(a));
         int [][] a = new int [][]{{},{},{}};
