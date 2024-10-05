@@ -33,6 +33,54 @@ public class ArrayMethods {
             }
         }
     }
+    public static int[][] swapRC(int[][] nums) {
+        int[][] out = new int[nums[0].length][nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            for (int ii = 0; ii < nums[i].length; ii++) {
+                out[ii][i] = nums[i][ii];
+            }
+        }
+        return out;
+    } 
+    // 3. Modify a given 2D array of integer as follows:
+    // Replace all the negative values:
+    // -When the row number is the same as the column number replace
+    // that negative with the value 1
+    // -All other negatives replace with 0
+    public static void replaceNegative(int[][] vals) {
+        for (int i = 0; i < vals.length; i++){
+            for (int ii = 0; ii < nums[i].length; ii++) {
+                if (vals[i][ii] < 0 && i == ii){
+                    vals[i][ii] = 1;
+                }
+                else if (vals[i][ii] < 0){
+                    vals[i][ii] = 0;
+                }
+            }
+        }
+    }
+
+    // 4. Make a copy of the given 2d array.
+    // When testing : make sure that changing the original does NOT change the copy.
+    // DO NOT use any built in methods that "copy" an array.
+    // You SHOULD write a helper method for this.
+    // If you don't see a good way to do that, you should stop and look at prior
+    // methods.
+    public static int[][] copy(int[][] nums) {
+        int[][] out = new int[][] out[nums.length][nums[0].length];
+        return null;
+    }
+
+    public static int[] 1dcopy(int[] ary){
+        int[] out = new int[ary.length];
+        for (int i = 0; i < out.length; i++){
+            out[i] = ary[i];
+        }
+        return out;
+    }
+
+
+    }
     public static void main(String[] args) {
         int[][] test1 = {{1, 2, 3}};
         System.out.println("arryToString({{1, 2, 3}}) expected [[1, 2 ,3]] result: " + arryToString(test1));
