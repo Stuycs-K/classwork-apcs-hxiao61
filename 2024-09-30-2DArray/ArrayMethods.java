@@ -66,9 +66,12 @@ public class ArrayMethods {
     // You SHOULD write a helper method for this.
     // If you don't see a good way to do that, you should stop and look at prior
     // methods.
-    public static int[][] copy(int[][] nums) {
-        int[][] out = new int[][] out[nums.length][nums[0].length];
-        return null;
+    public static int[][] copy(int[][] nums){
+      int [][] out = new int[nums.length][nums[0].length];
+      for (int i = 0; i < out.length; i++){
+        out[i] = copy1d(nums[i]);
+      }
+      return out;
     }
 
     public static int[] copy1d(int[] ary){
