@@ -79,7 +79,11 @@ public class ArrayDemo{
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return new int[1][1];
+    int [][] out = new int[nums.length][nums[0].length];
+    for (int i = 0; i < out.length; i++){
+      out[i] = copy1d(nums[i]);
+    }
+    return out;
   }
 
 //helper function for 2dcopy
