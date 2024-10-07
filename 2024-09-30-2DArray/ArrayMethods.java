@@ -22,7 +22,7 @@ public class ArrayMethods {
         }
         out += "]"
         return out;
-    }   
+    }
     public static int arr2DSum(int[][]nums) {
         int count = 0;
         for (int i = 0; i < nums.length; i++){
@@ -41,7 +41,7 @@ public class ArrayMethods {
             }
         }
         return out;
-    } 
+    }
     // 3. Modify a given 2D array of integer as follows:
     // Replace all the negative values:
     // -When the row number is the same as the column number replace
@@ -71,7 +71,7 @@ public class ArrayMethods {
         return null;
     }
 
-    public static int[] 1dcopy(int[] ary){
+    public static int[] copy1d(int[] ary){
         int[] out = new int[ary.length];
         for (int i = 0; i < out.length; i++){
             out[i] = ary[i];
