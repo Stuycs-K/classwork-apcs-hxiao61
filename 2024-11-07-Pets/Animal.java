@@ -20,7 +20,7 @@ public class Animal {
   Note: you MUST use getName() getNoise() here! You will see why later.
   */
   public void speak(){
-    System.out.println("My name is " + Animal.getName() + "\n I am " + age + "/n I say" + Animal.getNoise());
+    System.out.println("My name is " + getName() + "\nI am " + age + "\nI say " + getNoise());
   }
 
   public String getName(){
