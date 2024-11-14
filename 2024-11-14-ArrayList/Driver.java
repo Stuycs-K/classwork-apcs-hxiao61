@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 public class Driver{
   public static void main(String[] args){
-    System.out.println(createRandomArray(10));
-
+    ArrayList<String> tester = createRandomArray(20);
+    System.out.println(tester);
+    System.out.println(makeReversedList(tester));
   }
   public static ArrayList<String>createRandomArray(int size){
     ArrayList<String> Arr = new ArrayList<String>(size);
@@ -24,8 +25,11 @@ public class Driver{
   }
   }
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
-    //return a new ArrayList that is in the reversed order of the original.
-    return null;
+    ArrayList<String> Arr = new ArrayList<String>(original.size());
+    for (int i = original.size() -1; i > 0; i--){
+      Arr.add(original.get(i));}
+      Arr.add(original.get(0));
+    return Arr;
   }
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
     return null;
