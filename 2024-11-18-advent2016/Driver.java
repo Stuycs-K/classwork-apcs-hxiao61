@@ -1,3 +1,11 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+
+
+
 public class Driver{
   public static String[]parse(String file){
     try{
@@ -11,8 +19,8 @@ public class Driver{
     return null;
   }
   public void main(String[] arg){
-    String[]data = parse("input.txt");
-
+    String[]data = ("R1", "L2");
+    System.out.println(data);
   }
   public static int day1(String[]data){
     int count = 0;
@@ -25,6 +33,9 @@ public class Driver{
       int current = parseInt(data[i].substring(1));
       if(data[i].has("R")){
         direction++;
+        if(direction == 5){
+          direction = 1;
+        }
         if(direction == 1){
           forward = forward+current;
         if(direction == 2){
@@ -40,6 +51,9 @@ public class Driver{
       }
       if(data[i].has("L")){
         direction--;
+        if(direction == 0){
+          direction = 4;
+        }
         if(direction == 1){
           forward = forward+current;
         if(direction == 2){
