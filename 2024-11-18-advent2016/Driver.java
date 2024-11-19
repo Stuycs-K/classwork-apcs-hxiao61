@@ -18,9 +18,10 @@ public class Driver{
     }
     return null;
   }
-  public void main(String[] arg){
-    String[]data = ("R1", "L2");
-    System.out.println(data);
+
+  public static void main(String[] arg){
+    String[]data = new Scanner ("input.txt")
+    System.out.println(day1(data));
   }
   public static int day1(String[]data){
     int count = 0;
@@ -29,17 +30,18 @@ public class Driver{
     int right = 0;
     int left = 0;
     int direction = 1;
-    for (int i =0; i < data.legnth(); i++){
-      int current = parseInt(data[i].substring(1));
-      if(data[i].has("R")){
+    for (int i =0; i < data.length; i++){
+      int current = Integer.parseInt(data[i].substring(1));
+      if(data[i].contains("R")){
         direction++;
         if(direction == 5){
           direction = 1;
         }
         if(direction == 1){
           forward = forward+current;
+        }
         if(direction == 2){
-          right = right+current
+          right = right+current;
         }
         if(direction == 3){
           backward = backward+current;
@@ -48,16 +50,16 @@ public class Driver{
           left = left+current;
         }
       }
-      }
-      if(data[i].has("L")){
+      if(data[i].contains("L")){
         direction--;
         if(direction == 0){
           direction = 4;
         }
         if(direction == 1){
           forward = forward+current;
+        }
         if(direction == 2){
-          right = right+current
+          right = right+current;
         }
         if(direction == 3){
           backward = backward+current;
@@ -67,7 +69,6 @@ public class Driver{
         }
       }
       }
+        return(Math.abs(right-left) + Math.abs(forward-backward));
     }
-    return(Math.abs(right-left) + Math.abs(forward-backward));
   }
-}
