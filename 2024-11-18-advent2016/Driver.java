@@ -9,10 +9,17 @@ import java.util.ArrayList;
 public class Driver{
   public static String[]parse(String file){
     try{
-      Scanner inf = new Scanner(new File "input.txt");
-      Scanner line = inf.nextLine();
-      System.out.println(line);
-      return null;
+      Scanner inf = new Scanner(new File(file));
+      ArrayList<String> lines = new ArrayList<>();
+      while(inf.hasNextLine()){
+        String line = inf.nextLine();
+        String[] parts = line.split(",");
+        for(int i = 0; i < parts.length; i++){
+          lines.add(parts[i].trim());
+        }
+      }
+      inf.close();
+      return lines.toArray(new String[0]);
     } catch(Exception e){
       System.exit(1);
     }
@@ -20,7 +27,7 @@ public class Driver{
   }
 
   public static void main(String[] arg){
-    String[]data = new Scanner ("input.txt")
+    String[]data = parse("input.txt");
     System.out.println(day1(data));
   }
   public static int day1(String[]data){
