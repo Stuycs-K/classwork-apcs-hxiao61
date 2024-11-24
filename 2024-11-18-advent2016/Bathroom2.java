@@ -13,7 +13,7 @@ public class Bathroom2{
         
     }
     public static String bathroom(String data){
-        String[][] keypad = 
+        char[][] keypad = 
         {{' ', ' ', '1', ' ', ' '}, 
         {' ', '2', '3', '4', ' '}, 
         {'5', '6', '7', '8', '9'},
@@ -35,7 +35,7 @@ public class Bathroom2{
                 col++;
             }
         }
-        return keypad[row][col];
+        return Character.toString(keypad[row][col]);
     }
 
 }
