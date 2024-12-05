@@ -19,7 +19,7 @@ public class Driver{
         }
         System.out.print(Text.RESET);
     }
-    public static random(){
+    public static int random(){
         return (int)(Math.random() * (99 - 0 + 1)) + 0;
     }
     public static void display(){
@@ -32,7 +32,7 @@ public class Driver{
             } else {
                 Text.color(Text.WHITE);
             }
-            System.out.print(number);
+            System.out.print(num);
         }
     }
     public static void seperate(){
@@ -47,7 +47,7 @@ public class Driver{
         drawborder();
         display();
         seperate();
-        Text.go(31);
+        Text.go(31, 1);
         System.out.println(Text.RESET);
     }
 }
