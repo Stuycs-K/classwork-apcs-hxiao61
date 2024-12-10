@@ -14,6 +14,45 @@ public class Game{
 
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
       String action = userInput.nextLine();
+      if(action.equals("quit")){
+        System.out.println("byeee");
+        break;
+      }
+      else if(action.equals("a") || action.equals("attack")){
+        System.out.println(player.attack(enemy));
+      }
+      else if(action.equals("sp") || action.equals("special")){
+        System.out.println(player.specialAttack(enemy));
+      }
+      else if(action.equals("su") || action.equals("support")){
+        System.out.println(player.support());
+      }
+      else {
+        System.out.println("invalid input!");
+      }
+
+      if(enemy.getHP() > 0){
+        System.out.println();
+        System.out.println("Enemy's turn!");
+        int raction = (int) (Math.random() * 3);
+        if(raction == 0){
+          System.out.println(enemy.attack(player));
+        }
+        else if(raction == 1){
+          System.out.println(enemy.specialAttack(player));
+        }
+        else {
+          System.out.println(enemy.support());
+        }
+      }
+      System.out.println();
+    }
+    if(player.getHP() <= 0){
+      System.out.println("You lost!");
+    }
+    if(enemy.getHP() <= 0){
+      System.out.println("You won!");
     }
   }
+  
 }
